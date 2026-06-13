@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Site officiel de l'UBBF — Union Bouliste de Bellegarde-en-Forez" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} — UBBF</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Sitemap auto-généré par @astrojs/sitemap -->
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/le-club">Le club</a>
+        <a href="/actualites">Actualités</a>
+        <a href="/agenda">Agenda</a>
+        <a href="/contact">Contact</a>
+        <a href="/nous-trouver">Nous trouver</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />   <!-- Le contenu de chaque page s'insère ici -->
+    </main>
+
+    <footer>
+      <p>UBBF — Union Bouliste de Bellegarde-en-Forez</p>
+      <p>Retrouvez-nous sur <a href="https://facebook.com/UBBF" target="_blank">Facebook</a></p>
+    </footer>
+  </body>
+</html>
