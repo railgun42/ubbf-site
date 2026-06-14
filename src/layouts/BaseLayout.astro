@@ -1,10 +1,19 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = "Site officiel de l'UBBF — Union Bouliste de Bellegarde-en-Forez" } = Astro.props;
+const {
+  title,
+  description = "Site officiel de l'UBBF — Union Bouliste de Bellegarde-en-Forez. Club de boule lyonnaise dans la Loire (Forez).",
+  ogImage = '/images/og-default.jpg',
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -13,29 +22,115 @@ const { title, description = "Site officiel de l'UBBF — Union Bouliste de Bell
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (partage réseaux sociaux) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} — UBBF`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="UBBF — Union Bouliste de Bellegarde-en-Forez" />
+
     <title>{title} — UBBF</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- Sitemap auto-généré par @astrojs/sitemap -->
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
+
+    <!-- Navigation -->
     <header>
-      <nav>
-        <a href="/">Accueil</a>
-        <a href="/le-club">Le club</a>
-        <a href="/actualites">Actualités</a>
-        <a href="/agenda">Agenda</a>
-        <a href="/contact">Contact</a>
-        <a href="/nous-trouver">Nous trouver</a>
+      <nav class="site-nav" role="navigation" aria-label="Navigation principale">
+        <div class="container">
+          <a href="/" class="nav-logo" aria-label="UBBF — Accueil">
+            <img
+              src="/images/logo-ubbf.jpg"
+              alt="Logo UBBF"
+              class="nav-logo-img"
+              width="40"
+              height="40"
+            />
+            <div>
+              <div class="nav-logo-text">Union Bouliste</div>
+              <div class="nav-logo-sub">Bellegarde-en-Forez</div>
+            </div>
+          </a>
+
+          <ul class="nav-links" role="list">
+            <li><a href="/le-club" aria-current={currentPath === '/le-club' ? 'page' : undefined}>Le club</a></li>
+            <li><a href="/palmares" aria-current={currentPath === '/palmares' ? 'page' : undefined}>Palmarès</a></li>
+            <li><a href="/acces" aria-current={currentPath === '/acces' ? 'page' : undefined}>Nous trouver</a></li>
+            <li><a href="/contact" class="nav-cta">Nous contacter</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
 
-    <main>
-      <slot />   <!-- Le contenu de chaque page s'insère ici -->
+    <!-- Contenu de la page -->
+    <main id="main-content">
+      <slot />
     </main>
 
-    <footer>
-      <p>UBBF — Union Bouliste de Bellegarde-en-Forez</p>
-      <p>Retrouvez-nous sur <a href="https://facebook.com/UBBF" target="_blank">Facebook</a></p>
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+
+          <div class="footer-brand">
+            <strong style="color: white; font-size: 1rem;">UBBF</strong>
+            <p>
+              Union Bouliste de Bellegarde-en-Forez —
+              club de boule lyonnaise dans la Loire (42),
+              au cœur du Forez.
+            </p>
+            <a
+              href="https://www.facebook.com/UnionBoulisteBellegardeEnForez"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.65);font-size:0.875rem;margin-top:0.75rem;transition:color 0.15s;"
+              aria-label="Page Facebook de l'UBBF (nouvel onglet)"
+            >
+              Facebook →
+            </a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/le-club">Le club</a></li>
+              <li><a href="/palmares">Palmarès</a></li>
+              <li><a href="/acces">Nous trouver</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li style="color:rgba(255,255,255,0.65);font-size:0.875rem;">Bellegarde-en-Forez</li>
+              <li style="color:rgba(255,255,255,0.65);font-size:0.875rem;">Loire (42)</li>
+              <!-- Ajouter email/tél quand disponible -->
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <span>© {new Date().getFullYear()} Union Bouliste de Bellegarde-en-Forez</span>
+          <span>Affilié FFSB — Fédération Française du Sport-Boules</span>
+        </div>
+      </div>
     </footer>
+
   </body>
 </html>

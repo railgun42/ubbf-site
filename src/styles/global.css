@@ -1,0 +1,365 @@
+/* ============================================================
+   UBBF — global.css
+   Variables, reset, typographie, composants réutilisables
+   ============================================================ */
+
+/* ── Variables ────────────────────────────────────────────── */
+:root {
+  /* Palette UBBF */
+  --vert-ubbf:        #1a7a3c;
+  --vert-ubbf-hover:  #155f2f;
+  --vert-ubbf-light:  #2d9651;
+  --vert-pale:        #e8f5ee;
+  --vert-pale-border: #c2e0cc;
+
+  /* Neutres */
+  --noir:             #1a1a1a;
+  --gris-texte:       #4a4a4a;
+  --gris-muted:       #6b7280;
+  --gris-border:      #e5e7eb;
+  --gris-bg:          #f9fafb;
+  --blanc:            #ffffff;
+
+  /* Typographie */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+  --text-3xl:  1.875rem;  /* 30px */
+
+  /* Layout */
+  --max-width:    1100px;
+  --px-page:      1.25rem;
+  --radius-sm:    4px;
+  --radius-md:    8px;
+  --radius-lg:    12px;
+  --radius-full:  9999px;
+
+  /* Ombres */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--noir);
+  background-color: var(--blanc);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ── Utilitaires layout ───────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--px-page);
+}
+
+/* ── Typographie commune ──────────────────────────────────── */
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: var(--noir);
+  font-weight: 600;
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+
+p { line-height: 1.7; }
+
+/* ── Boutons ──────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  padding: 0 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--vert-ubbf);
+  color: var(--blanc);
+  border: 2px solid var(--vert-ubbf);
+}
+.btn-primary:hover {
+  background: var(--vert-ubbf-hover);
+  border-color: var(--vert-ubbf-hover);
+}
+
+.btn-white {
+  background: var(--blanc);
+  color: var(--vert-ubbf);
+  border: 2px solid var(--blanc);
+}
+.btn-white:hover {
+  background: var(--vert-pale);
+  border-color: var(--vert-pale);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: var(--blanc);
+  border: 2px solid rgba(255,255,255,0.7);
+}
+.btn-outline-white:hover {
+  border-color: var(--blanc);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ── Tags / badges ────────────────────────────────────────── */
+.tag {
+  display: inline-block;
+  background: var(--vert-pale);
+  color: var(--vert-ubbf);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ── Navigation ───────────────────────────────────────────── */
+.site-nav {
+  background: var(--vert-ubbf);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blanc);
+  text-decoration: none;
+}
+
+.nav-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blanc);
+  object-fit: contain;
+  padding: 2px;
+}
+
+.nav-logo-text {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.nav-logo-sub {
+  font-size: var(--text-xs);
+  opacity: 0.75;
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.85);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: color 0.15s;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--blanc);
+}
+
+.nav-links a[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blanc);
+  border-radius: 1px;
+}
+
+.nav-cta {
+  background: var(--blanc);
+  color: var(--vert-ubbf) !important;
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+.nav-cta:hover {
+  background: var(--vert-pale) !important;
+}
+.nav-cta::after {
+  display: none !important;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.site-footer {
+  background: var(--noir);
+  color: rgba(255,255,255,0.75);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-brand p {
+  font-size: var(--text-sm);
+  margin-top: 0.75rem;
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.footer-col h4 {
+  color: var(--blanc);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-col ul a {
+  color: rgba(255,255,255,0.65);
+  font-size: var(--text-sm);
+  transition: color 0.15s;
+}
+.footer-col ul a:hover {
+  color: var(--blanc);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── Cartes génériques ────────────────────────────────────── */
+.card {
+  background: var(--blanc);
+  border: 1px solid var(--gris-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Section header commun ────────────────────────────────── */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: var(--text-xl);
+}
+
+.section-header a {
+  font-size: var(--text-sm);
+  color: var(--vert-ubbf);
+  font-weight: 500;
+  transition: opacity 0.15s;
+}
+.section-header a:hover { opacity: 0.75; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root { --px-page: 1rem; }
+
+  .nav-links { display: none; }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  h1 { font-size: var(--text-2xl); }
+  h2 { font-size: var(--text-xl); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -3,19 +3,418 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Agenda / Événements"
-  description="Bienvenue sur le site officiel de l'UBBF, club de boules à Bellegarde-en-Forez dans la Loire."
+  title="Le club"
+  description="Découvrez l'Union Bouliste de Bellegarde-en-Forez : son histoire, ses valeurs, ses équipes et son esprit convivial. Club de boule lyonnaise dans la Loire."
 >
-  <h1>Union Bouliste de Bellegarde-en-Forez</h1>
-  <p>Bienvenue sur le site officiel de l'UBBF, club de boules situé à Bellegarde-en-Forez (Loire, Forez).</p>
 
-  <section>
-    <h2>Le club</h2>
-    <p>À compléter avec les infos UBBF.</p>
+  <!-- EN-TÊTE DE PAGE -->
+  <section class="page-header" aria-label="Le club">
+    <div class="container">
+      <span class="page-eyebrow">Le club</span>
+      <h1>Une famille bouliste au cœur du Forez</h1>
+      <p class="page-lead">
+        Depuis [ANNÉE], l'Union Bouliste de Bellegarde-en-Forez fait vivre
+        la boule lyonnaise dans la Loire. Un club où la compétition rime
+        avec convivialité, et où chaque joueur trouve sa place.
+      </p>
+    </div>
   </section>
 
-  <section>
-    <h2>Prochains événements</h2>
-    <p>Agenda à venir.</p>
+  <!-- HISTOIRE -->
+  <section class="section-bloc" aria-labelledby="titre-histoire">
+    <div class="container bloc-inner">
+      <div class="bloc-text">
+        <span class="bloc-tag">Notre histoire</span>
+        <h2 id="titre-histoire">Né d'une passion pour le jeu</h2>
+        <p>
+          L'UBB est née de l'envie de quelques passionnés de réunir les
+          joueurs de boule lyonnaise de Bellegarde-en-Forez et des communes
+          voisines. Ce qui a commencé comme un rendez-vous entre amis sur
+          le terrain est devenu, au fil des saisons, un club structuré et
+          reconnu dans le paysage bouliste du Forez.
+        </p>
+        <p>
+          Aujourd'hui affilié à la Fédération Française du Sport-Boules,
+          le club engage chaque année plusieurs équipes en championnat et
+          organise ses propres concours, dont le désormais traditionnel
+          Grand Week-end Bouliste qui rassemble joueurs et public sur
+          le boulodrome.
+        </p>
+      </div>
+      <div class="bloc-photo">
+        <img
+          src="/images/club-histoire.jpg"
+          alt="Joueurs de l'UBBF réunis sur le boulodrome de Bellegarde-en-Forez"
+          width="520"
+          height="360"
+          loading="lazy"
+          class="photo-bloc"
+        />
+      </div>
+    </div>
   </section>
+
+  <!-- VALEURS -->
+  <section class="section-valeurs" aria-labelledby="titre-valeurs">
+    <div class="container">
+      <div class="valeurs-header">
+        <span class="bloc-tag">Nos valeurs</span>
+        <h2 id="titre-valeurs">Ce qui nous rassemble</h2>
+      </div>
+      <ul class="valeurs-grid" role="list">
+
+        <li class="valeur-card">
+          <div class="valeur-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/>
+            </svg>
+          </div>
+          <h3>Convivialité</h3>
+          <p>
+            Avant d'être un sport de compétition, la boule lyonnaise est
+            un moment de partage. Au club, l'accueil et la bonne humeur
+            passent toujours en premier.
+          </p>
+        </li>
+
+        <li class="valeur-card">
+          <div class="valeur-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+            </svg>
+          </div>
+          <h3>Esprit de compétition</h3>
+          <p>
+            Du loisir au haut niveau, nos équipes défendent les couleurs
+            de Bellegarde dans les championnats de la Loire et au-delà,
+            avec sérieux et fair-play.
+          </p>
+        </li>
+
+        <li class="valeur-card">
+          <div class="valeur-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2Z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>Transmission</h3>
+          <p>
+            Le club ouvre ses portes aux débutants comme aux jeunes.
+            Les joueurs expérimentés transmettent volontiers les gestes
+            et les règles à la nouvelle génération.
+          </p>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ÉQUIPES -->
+  <section class="section-bloc section-bloc--reverse" aria-labelledby="titre-equipes">
+    <div class="container bloc-inner">
+      <div class="bloc-photo">
+        <img
+          src="/images/club-equipe.jpg"
+          alt="Équipe de l'UBBF en maillot vert lors d'une compétition de boule lyonnaise"
+          width="520"
+          height="360"
+          loading="lazy"
+          class="photo-bloc"
+        />
+      </div>
+      <div class="bloc-text">
+        <span class="bloc-tag">Nos équipes</span>
+        <h2 id="titre-equipes">Sous le maillot vert</h2>
+        <p>
+          Le club engage [NOMBRE] équipes en compétition officielle,
+          réparties entre les différentes divisions. Doublettes, triplettes,
+          simples : nos joueurs participent aux championnats des clubs,
+          aux concours fédéraux et aux rencontres amicales tout au long
+          de la saison.
+        </p>
+        <p>
+          Que vous visiez le podium ou que vous jouiez pour le plaisir,
+          il existe une équipe et un niveau de pratique adaptés à vos
+          envies. L'important, c'est de fouler le terrain ensemble.
+        </p>
+        <a href="/palmares" class="btn btn-primary" style="margin-top: 1.25rem;">
+          Voir notre palmarès →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LE BUREAU -->
+  <section class="section-bureau" aria-labelledby="titre-bureau">
+    <div class="container">
+      <div class="valeurs-header">
+        <span class="bloc-tag">Le bureau</span>
+        <h2 id="titre-bureau">L'équipe qui fait tourner le club</h2>
+        <p class="bureau-intro">
+          Le club est animé par une équipe de bénévoles qui assurent
+          l'organisation des concours, la gestion des licences et la
+          vie quotidienne de l'association.
+        </p>
+      </div>
+      <ul class="bureau-grid" role="list">
+        <li class="bureau-card">
+          <div class="bureau-avatar" aria-hidden="true">P</div>
+          <h3>[Nom du président]</h3>
+          <p class="bureau-role">Président</p>
+        </li>
+        <li class="bureau-card">
+          <div class="bureau-avatar" aria-hidden="true">V</div>
+          <h3>[Nom]</h3>
+          <p class="bureau-role">Vice-président</p>
+        </li>
+        <li class="bureau-card">
+          <div class="bureau-avatar" aria-hidden="true">S</div>
+          <h3>[Nom]</h3>
+          <p class="bureau-role">Secrétaire</p>
+        </li>
+        <li class="bureau-card">
+          <div class="bureau-avatar" aria-hidden="true">T</div>
+          <h3>[Nom]</h3>
+          <p class="bureau-role">Trésorier</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta" aria-label="Rejoindre le club">
+    <div class="container cta-inner">
+      <div>
+        <h2>Envie de nous rejoindre ?</h2>
+        <p>
+          Le boulodrome de Bellegarde-en-Forez vous attend. Venez découvrir
+          la boule lyonnaise et l'ambiance du club, l'essai est sans engagement.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-white">Nous rejoindre</a>
+        <a href="/acces" class="btn btn-outline-white">Nous trouver →</a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+
+  /* ── En-tête de page ─────────────────────────────────────── */
+  .page-header {
+    background: var(--vert-ubbf);
+    padding: 3.5rem 0;
+  }
+  .page-eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .page-header h1 {
+    color: var(--blanc);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    max-width: 700px;
+  }
+  .page-lead {
+    color: rgba(255,255,255,0.85);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+
+  /* ── Bloc texte + photo ──────────────────────────────────── */
+  .section-bloc {
+    padding: 4rem 0;
+    background: var(--blanc);
+  }
+  .section-bloc--reverse {
+    background: var(--gris-bg);
+  }
+  .bloc-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .bloc-tag {
+    display: inline-block;
+    color: var(--vert-ubbf);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .bloc-text h2 {
+    margin-bottom: 1rem;
+  }
+  .bloc-text p {
+    color: var(--gris-texte);
+    margin-bottom: 0.875rem;
+  }
+  .photo-bloc {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 3px solid var(--vert-pale-border);
+    background: var(--vert-pale);
+    color: var(--gris-muted);
+    font-size: var(--text-sm);
+  }
+
+  /* ── Valeurs ─────────────────────────────────────────────── */
+  .section-valeurs {
+    padding: 4rem 0;
+    background: var(--blanc);
+  }
+  .valeurs-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .valeurs-header .bloc-tag {
+    display: block;
+  }
+  .valeurs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .valeur-card {
+    background: var(--blanc);
+    border: 1px solid var(--gris-border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    text-align: center;
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+  .valeur-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-color: var(--vert-pale-border);
+  }
+  .valeur-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: var(--vert-pale);
+    color: var(--vert-ubbf);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .valeur-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: 0.625rem;
+  }
+  .valeur-card p {
+    color: var(--gris-texte);
+    font-size: var(--text-sm);
+    line-height: 1.65;
+  }
+
+  /* ── Bureau ──────────────────────────────────────────────── */
+  .section-bureau {
+    padding: 4rem 0;
+    background: var(--blanc);
+  }
+  .bureau-intro {
+    color: var(--gris-texte);
+    max-width: 560px;
+    margin: 0.75rem auto 0;
+  }
+  .bureau-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
+  }
+  .bureau-card {
+    background: var(--gris-bg);
+    border: 1px solid var(--gris-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .bureau-avatar {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 0.875rem;
+    border-radius: 50%;
+    background: var(--vert-ubbf);
+    color: var(--blanc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    font-weight: 700;
+  }
+  .bureau-card h3 {
+    font-size: var(--text-base);
+    margin-bottom: 0.25rem;
+  }
+  .bureau-role {
+    color: var(--gris-muted);
+    font-size: var(--text-sm);
+  }
+
+  /* ── CTA ─────────────────────────────────────────────────── */
+  .section-cta {
+    background: var(--vert-ubbf);
+    padding: 3rem 0;
+  }
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .section-cta h2 {
+    color: var(--blanc);
+    font-size: var(--text-2xl);
+    margin-bottom: 0.5rem;
+  }
+  .section-cta p {
+    color: rgba(255,255,255,0.85);
+    max-width: 480px;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .bloc-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .section-bloc--reverse .bloc-photo {
+      order: -1;
+    }
+    .photo-bloc {
+      height: 240px;
+    }
+    .cta-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+    .cta-actions {
+      justify-content: center;
+    }
+  }
+</style>

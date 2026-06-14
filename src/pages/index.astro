@@ -4,18 +4,426 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Accueil"
-  description="Bienvenue sur le site officiel de l'UBBF, club de boules à Bellegarde-en-Forez dans la Loire."
+  description="Site officiel de l'UBBF — Union Bouliste de Bellegarde-en-Forez. Club de boule lyonnaise dans la Loire (42). Venez jouer avec nous !"
 >
-  <h1>Union Bouliste de Bellegarde-en-Forez</h1>
-  <p>Bienvenue sur le site officiel de l'UBBF, club de boules situé à Bellegarde-en-Forez (Loire, Forez).</p>
 
-  <section>
-    <h2>Le club</h2>
-    <p>À compléter avec les infos UBBF.</p>
+  <!-- HERO -->
+  <section class="hero" aria-label="Présentation du club">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="hero-eyebrow">Boule lyonnaise · Bellegarde-en-Forez · Loire (42)</span>
+        <h1>Union Bouliste<br />de Bellegarde-en-Forez</h1>
+        <p class="hero-desc">
+          Club de boule lyonnaise au cœur du Forez depuis [ANNÉE].
+          Compétition, convivialité et passion du jeu — ouverts à tous les niveaux.
+        </p>
+        <div class="hero-actions">
+          <a href="/contact" class="btn btn-white">Nous rejoindre</a>
+          <a href="/le-club" class="btn btn-outline-white">Découvrir le club →</a>
+        </div>
+      </div>
+      <div class="hero-logo">
+        <img
+          src="/images/logo-ubbf.jpg"
+          alt="Logo de l'Union Bouliste de Bellegarde-en-Forez"
+          width="180"
+          height="180"
+          loading="eager"
+        />
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>Prochains événements</h2>
-    <p>Agenda à venir.</p>
+  <!-- STATS -->
+  <section class="stats-bar" aria-label="Chiffres clés du club">
+    <div class="container">
+      <ul class="stats-list" role="list">
+        <li class="stat-item">
+          <span class="stat-number">[N]</span>
+          <span class="stat-label">licenciés</span>
+        </li>
+        <li class="stat-divider" aria-hidden="true"></li>
+        <li class="stat-item">
+          <span class="stat-number">[N]</span>
+          <span class="stat-label">équipes en compétition</span>
+        </li>
+        <li class="stat-divider" aria-hidden="true"></li>
+        <li class="stat-item">
+          <span class="stat-number">[ANNÉE]</span>
+          <span class="stat-label">année de création</span>
+        </li>
+        <li class="stat-divider" aria-hidden="true"></li>
+        <li class="stat-item">
+          <span class="stat-number">Loire</span>
+          <span class="stat-label">Forez — région lyonnaise</span>
+        </li>
+      </ul>
+    </div>
   </section>
+
+  <!-- PRESENTATION -->
+  <section class="section-presentation" aria-labelledby="titre-presentation">
+    <div class="container presentation-inner">
+
+      <div class="presentation-photo">
+        <img
+          src="/images/boulodrome.jpg"
+          alt="Vue du boulodrome de l'UBBF à Bellegarde-en-Forez, pistes de boule lyonnaise en intérieur"
+          width="560"
+          height="380"
+          loading="lazy"
+          class="photo-boulodrome"
+        />
+      </div>
+
+      <div class="presentation-text">
+        <h2 id="titre-presentation">Un club au cœur du Forez</h2>
+        <p>
+          L'Union Bouliste de Bellegarde-en-Forez rassemble des joueurs
+          de boule lyonnaise de tous niveaux, du loisir à la compétition.
+          Implantés dans la Loire depuis [ANNÉE], nous participons aux
+          championnats FFSB et organisons des concours ouverts à tous.
+        </p>
+        <p>
+          Le club est ouvert aux débutants comme aux joueurs confirmés.
+          Les entraînements ont lieu [JOURS ET HORAIRES À COMPLÉTER].
+          Venez essayer, l'entrée est libre pour une première séance.
+        </p>
+        <div class="presentation-actions">
+          <a href="/le-club" class="btn btn-primary">En savoir plus →</a>
+          <a href="/acces" class="btn btn-secondary">Nous trouver</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EQUIPE PHOTO -->
+  <section class="section-equipe" aria-labelledby="titre-equipe">
+    <div class="container">
+      <h2 id="titre-equipe">Nos équipes</h2>
+      <p class="equipe-intro">
+        Joueurs de tous niveaux, du championnat de Loire aux compétitions régionales —
+        l'UBB représente Bellegarde-en-Forez avec fierté.
+      </p>
+      <div class="equipe-photos">
+        <figure class="equipe-figure">
+          <img
+            src="/images/equipe-competition.jpg"
+            alt="Équipes de l'UBBF lors d'une compétition de boule lyonnaise, joueurs en maillot vert"
+            width="700"
+            height="420"
+            loading="lazy"
+            class="photo-equipe"
+          />
+          <figcaption>Nos joueurs en compétition</figcaption>
+        </figure>
+      </div>
+      <div class="equipe-cta">
+        <a href="/palmares" class="btn btn-primary">Voir le palmarès →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACEBOOK / SUIVRE -->
+  <section class="section-facebook" aria-label="Suivre l'UBBF sur Facebook">
+    <div class="container facebook-inner">
+      <div class="facebook-text">
+        <h2>Restez informés</h2>
+        <p>
+          Concours, résultats, vie du club — toutes nos actualités sont publiées
+          régulièrement sur notre page Facebook. Suivez-nous pour ne rien manquer.
+        </p>
+        <a
+          href="https://www.facebook.com/UnionBoulisteBellegardeEnForez"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-facebook"
+          aria-label="Suivre l'UBBF sur Facebook (nouvel onglet)"
+        >
+          Voir la page Facebook →
+        </a>
+      </div>
+      <div class="facebook-icon" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="12" fill="#1877F2"/>
+          <path d="M44 32C44 25.373 38.627 20 32 20C25.373 20 20 25.373 20 32C20 37.989 24.388 42.954 30.125 43.854V35.469H27.078V32H30.125V29.356C30.125 26.348 31.916 24.688 34.657 24.688C35.97 24.688 37.344 24.922 37.344 24.922V27.875H35.83C34.339 27.875 33.875 28.8 33.875 29.75V32H37.203L36.671 35.469H33.875V43.854C39.612 42.954 44 37.989 44 32Z" fill="white"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA REJOINDRE -->
+  <section class="section-cta" aria-label="Rejoindre le club">
+    <div class="container cta-inner">
+      <div>
+        <h2>Envie de jouer à la boule lyonnaise ?</h2>
+        <p>
+          Débutant ou confirmé, il y a une place pour vous à Bellegarde-en-Forez.
+          Venez nous rencontrer au boulodrome !
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-white">Nous rejoindre</a>
+        <a href="/contact" class="btn btn-outline-white">Nous contacter →</a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+
+  /* ── Hero ───────────────────────────────────────────────── */
+  .hero {
+    background: var(--vert-ubbf);
+    padding: 4rem 0 3.5rem;
+  }
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .hero-content { flex: 1; max-width: 580px; }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    color: var(--blanc);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .hero-desc {
+    color: rgba(255,255,255,0.85);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+    max-width: 460px;
+  }
+  .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .hero-logo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.25);
+    object-fit: contain;
+    background: var(--blanc);
+    padding: 6px;
+  }
+
+  /* ── Stats ──────────────────────────────────────────────── */
+  .stats-bar {
+    background: var(--blanc);
+    border-bottom: 1px solid var(--gris-border);
+  }
+  .stats-list { display: flex; align-items: stretch; }
+  .stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  .stat-number {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--vert-ubbf);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: var(--text-xs);
+    color: var(--gris-muted);
+    margin-top: 4px;
+  }
+  .stat-divider {
+    width: 1px;
+    background: var(--gris-border);
+    margin: 1rem 0;
+  }
+
+  /* ── Présentation ───────────────────────────────────────── */
+  .section-presentation {
+    padding: 4rem 0;
+    background: var(--gris-bg);
+  }
+  .presentation-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .photo-boulodrome {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 3px solid var(--vert-pale-border);
+    background: var(--vert-pale);
+    color: var(--gris-muted);
+    font-size: var(--text-sm);
+  }
+  .presentation-text h2 { margin-bottom: 1rem; }
+  .presentation-text p {
+    color: var(--gris-texte);
+    margin-bottom: 0.875rem;
+  }
+  .presentation-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 44px;
+    padding: 0 1.5rem;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    background: var(--blanc);
+    color: var(--vert-ubbf);
+    border: 2px solid var(--vert-pale-border);
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .btn-secondary:hover {
+    border-color: var(--vert-ubbf);
+    background: var(--vert-pale);
+  }
+
+  /* ── Équipe ─────────────────────────────────────────────── */
+  .section-equipe {
+    padding: 4rem 0;
+    background: var(--blanc);
+  }
+  .section-equipe h2 { margin-bottom: 0.75rem; }
+  .equipe-intro {
+    color: var(--gris-texte);
+    max-width: 560px;
+    margin-bottom: 2rem;
+  }
+  .equipe-photos { margin-bottom: 1.75rem; }
+  .equipe-figure { margin: 0; }
+  .photo-equipe {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--radius-lg);
+    border: 3px solid var(--gris-border);
+    background: var(--vert-pale);
+    color: var(--gris-muted);
+    font-size: var(--text-sm);
+  }
+  .equipe-figure figcaption {
+    margin-top: 0.625rem;
+    font-size: var(--text-sm);
+    color: var(--gris-muted);
+    text-align: center;
+  }
+  .equipe-cta { margin-top: 0.25rem; }
+
+  /* ── Facebook ───────────────────────────────────────────── */
+  .section-facebook {
+    padding: 3rem 0;
+    background: var(--gris-bg);
+    border-top: 1px solid var(--gris-border);
+    border-bottom: 1px solid var(--gris-border);
+  }
+  .facebook-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .facebook-text h2 { margin-bottom: 0.75rem; }
+  .facebook-text p {
+    color: var(--gris-texte);
+    max-width: 480px;
+    margin-bottom: 1.25rem;
+  }
+  .btn-facebook {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 44px;
+    padding: 0 1.5rem;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    background: #1877F2;
+    color: var(--blanc);
+    border: none;
+    transition: background 0.15s;
+  }
+  .btn-facebook:hover { background: #1461c8; }
+  .facebook-icon { flex-shrink: 0; }
+
+  /* ── CTA ─────────────────────────────────────────────────── */
+  .section-cta {
+    background: var(--vert-ubbf);
+    padding: 3rem 0;
+  }
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .section-cta h2 {
+    color: var(--blanc);
+    font-size: var(--text-2xl);
+    margin-bottom: 0.5rem;
+  }
+  .section-cta p {
+    color: rgba(255,255,255,0.85);
+    max-width: 480px;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .hero-inner { flex-direction: column; text-align: center; }
+    .hero-actions { justify-content: center; }
+    .hero-logo img { width: 100px; height: 100px; }
+
+    .stats-list { display: grid; grid-template-columns: 1fr 1fr; }
+    .stat-divider { display: none; }
+
+    .presentation-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .photo-boulodrome { height: 240px; }
+
+    .photo-equipe { height: 260px; }
+
+    .facebook-inner { flex-direction: column; gap: 1.5rem; }
+    .facebook-icon { display: none; }
+
+    .cta-inner { flex-direction: column; text-align: center; }
+    .cta-actions { justify-content: center; }
+  }
+</style>
